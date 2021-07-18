@@ -1,6 +1,6 @@
 # dashboard-chacara
 
-Web com angular + bootstrap
+Aplicação web com Angular 9 + Bootstrap
 
 # Inicio
 
