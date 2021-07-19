@@ -81,10 +81,10 @@ const NavigationItems = [
         icon: 'feather icon-edit'
       },
       {
-        id: 'solicita-orcamento',
-        title: 'Solicitar Orçamento',
+        id: 'reserv',
+        title: 'Reservar',
         type: 'item',
-        url: '/solicita-orcamento',
+        url: '/reservar',
         classes: 'nav-item',
         icon: 'feather icon-plus-square'
       }

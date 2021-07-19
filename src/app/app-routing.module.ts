@@ -22,8 +22,8 @@ const routes: Routes = [
         loadChildren: () => import('./demo/views/orcamento/realizar-orcamento/realiza-orcamento.module').then(m => m.RealizaOrcamentoModule)
       },
       {
-        path: 'solicita-orcamento',
-        loadChildren: () => import('./demo/views/orcamento/solicita-orcamento/solicita-orcamento.module').then(m => m.SolicitaOrcamentoModule)
+        path: 'reservar',
+        loadChildren: () => import('./demo/views/orcamento/reservar/reserva.module').then(m => m.ReservaModule)
       },
       {
         path: 'clientes',

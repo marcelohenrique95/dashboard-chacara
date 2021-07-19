@@ -1,63 +1,85 @@
-<app-card cardTitle="Realizar Orçamento" [options]="false">
-  <div class="col-sm-12">
-    <div class="row">
-      <div class="col-md-4">
-        <form action="javascript:">
+<form id="formRegister" [formGroup]="orcamentoForm">
+  <app-card cardTitle="Realizar Orçamento" [options]="false">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-md-4">
           <div class="form-group">
             <label for="exampleFormControlSelect1">Dia do evento</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="inputDay">
               <option></option>
               <option value=1>Sexta-feira</option>
-              <option value=1>Sábado</option>
-              <option value=1>Domingo</option>
-              <option value=1>Feriado</option>
-              <option value=1>Sexta e Sábado</option>
-              <option value=1>Sexta até Domingo</option>
-              <option value=1>Entre segunda e quinta-feira</option>
-              <option value=1>Carnaval</option>
-              <option value=1>Natal</option>
-              <option value=1>Reveillon</option>
-              <option value=1>OUTRO</option>
+              <option value=2>Sábado</option>
+              <option value=3>Domingo</option>
+              <option value=4>Feriado</option>
+              <option value=5>Sexta e Sábado</option>
+              <option value=6>Sábado e Domingo</option>
+              <option value=7>Sexta até Domingo</option>
+              <option value=0>Entre segunda e quinta-feira</option>
+              <option value=8>Carnaval</option>
+              <option value=9>Natal</option>
+              <option value=10>Reveillon</option>
             </select>
           </div>
-        </form>
-      </div>
-      <div class="col-md-4">
-        <form action="javascript:">
+        </div>
+        <div class="col-md-4">
           <div class="form-group">
             <label for="exampleFormControlSelect1">Tipo de Evento</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="inputTypeEvent">
               <option></option>
               <option value=1>Aniversário</option>
               <option value=2>Casamento</option>
-              <option value=1>Churrasco</option>
-              <option value=1>Chá de bebê</option>
-              <option value=1>Retiro de Igreja</option>
-              <option value=1>Familiar</option>
+              <option value=3>Churrasco</option>
+              <option value=4>Chá de bebê</option>
+              <option value=5>Retiro de Igreja</option>
+              <option value=6>Familiar</option>
             </select>
           </div>
-        </form>
-      </div>
-      <div class="col-md-4">
-        <form action="javascript:">
+        </div>
+        <div class="col-md-4">
           <div class="form-group">
             <label for="exampleFormControlSelect1">Nº Convidados</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="inputInvit">
               <option></option>
-              <option value=1>até 20 convidados</option>
-              <option value=1>entre 20 e 50 convidados</option>
-              <option value=1>entre 50 e 70 convidados</option>
-              <option value=1>acima de 80 convidados</option>
+              <option value=20>até 20 convidados</option>
+              <option value=49>entre 20 e 50 convidados</option>
+              <option value=60>entre 50 e 70 convidados</option>
+              <option value=90>acima de 80 convidados</option>
             </select>
           </div>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
+    <br>
+    <div class="form-group">
+      <button type="button" class="btn btn-glow-dark btn-danger" (click)="realizarOrc()" data-toggle="tooltip">Confirma</button>
+    </div>
+    <div *ngIf="showError">
+      <label> PREENCHA TODOS OS CAMPOS</label>
+    </div>
+  </app-card>
   <br>
-  <div class="form-group">
-    <button type="button" class="btn btn-glow-dark btn-danger" title="btn btn-glow-dark btn-dark" data-toggle="tooltip">Confirma</button>
+  <div class="col-sm-12">
+    <app-card cardTitle="Valor" [options]="false">
+      <div>
+        <h3>O valor do seu evento será R$<strong>{{result}}</strong></h3>
+      </div>
+      <hr>
+      <div>
+        <label>Deseja receber o orçamento detalhado no e-mail?</label>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+
+            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite o email">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <button type="button" class="btn btn-glow-dark btn-primary" data-toggle="tooltip">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </app-card>
   </div>
-</app-card>
-
-
+</form>

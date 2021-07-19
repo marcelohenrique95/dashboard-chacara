@@ -1,10 +1,12 @@
+import { ClienteService } from './service/cliente.service';
+import { OrcamentoService } from './service/orcamento.service';
 import { SocialComponent } from './demo/views/info/social/social.component';
 import { ContatoComponent } from './demo/views/info/contato/contato.component';
 import { FotosComponent } from './demo/views/fotos/fotos.component';
 import { ClientesComponent } from './demo/views/admin/clientes/clientes.component';
 import { ReservasComponent } from './demo/views/admin/reservas/reservas.component';
 import { RealizaOrcamentoComponent } from './demo/views/orcamento/realizar-orcamento/realiza-orcamento.component';
-import { SolicitaOrcamentoComponent } from './demo/views/orcamento/solicita-orcamento/solicita-orcamento.component';
+import { ReservaComponent } from './demo/views/orcamento/reservar/reserva.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -28,6 +30,7 @@ import { NavLeftComponent } from './theme/layout/admin/nav-bar/nav-left/nav-left
 import { NavSearchComponent } from './theme/layout/admin/nav-bar/nav-left/nav-search/nav-search.component';
 import { NavRightComponent } from './theme/layout/admin/nav-bar/nav-right/nav-right.component';
 import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
+import {HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -47,7 +50,7 @@ import { ConfigurationComponent } from './theme/layout/admin/configuration/confi
     NavSearchComponent,
     NavRightComponent,
     ConfigurationComponent,
-    SolicitaOrcamentoComponent,
+    ReservaComponent,
     RealizaOrcamentoComponent,
     ReservasComponent,
     ClientesComponent,
@@ -63,9 +66,14 @@ import { ConfigurationComponent } from './theme/layout/admin/configuration/confi
     NgbDropdownModule,
     NgbTooltipModule,
     NgbButtonsModule,
-    NgbTabsetModule
+    NgbTabsetModule,
+    HttpClientModule
   ],
-  providers: [NavigationItem],
+  providers: [
+    NavigationItem,
+    OrcamentoService,
+    ClienteService
+  ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]
 })
