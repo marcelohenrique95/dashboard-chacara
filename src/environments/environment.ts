@@ -3,6 +3,6 @@ export const environment = {
   url: {
     orcamentoUrl: 'http://localhost:8080/v1/orcamento',
     clienteUrl: 'http://localhost:8080/cliente',
-    reservaUrl: 'http://localhost:8080/reserva'
+    reservaUrl: 'http://localhost:8080/reserve'
   }
 };

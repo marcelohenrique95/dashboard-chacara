@@ -31,6 +31,7 @@ import { NavSearchComponent } from './theme/layout/admin/nav-bar/nav-left/nav-se
 import { NavRightComponent } from './theme/layout/admin/nav-bar/nav-right/nav-right.component';
 import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
 import {HttpClientModule } from '@angular/common/http';
+import { ReservaService } from './service/reserva.service';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import {HttpClientModule } from '@angular/common/http';
   providers: [
     NavigationItem,
     OrcamentoService,
+    ReservaService,
     ClienteService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

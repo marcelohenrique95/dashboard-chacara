@@ -33,6 +33,12 @@ export class RealizaOrcamentoComponent implements OnInit {
     event.target.checked;
   }
 
+  clear() {
+    this.orcamentoForm.get('inputDay').setValue('');
+    this.orcamentoForm.get('inputTypeEvent').setValue('');
+    this.orcamentoForm.get('inputInvit').setValue('');
+  }
+
   realizarOrc() {
     this.orcamento = new Orcamento()
     this.orcamento.dayEnum = this.orcamentoForm.get('inputDay').value;
@@ -41,8 +47,7 @@ export class RealizaOrcamentoComponent implements OnInit {
     if(this.orcamento.dayEnum == null || this.orcamento.typeEvent == null || this.orcamento.qtdPerson == null){
       this.showError = true;
     } else {
-      this.orcamentoService.realizarOrcamento(this.orcamento.dayEnum,
-        this.orcamento.typeEvent, this.orcamento.qtdPerson).subscribe((data) => {this.result = data});
+      this.orcamentoService.realizarOrcamento(this.orcamento).subscribe((data) => {this.result = data});
     }
 
     console.log('resultado');

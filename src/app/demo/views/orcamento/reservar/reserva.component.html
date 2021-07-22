@@ -1,63 +1,84 @@
-<app-card cardTitle="Reservar" [options]="false">
-  <div class="col-sm-12">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="exampleInputPassword1">Nome</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+<form id="formRegister" [formGroup]="reservaForm">
+  <app-card cardTitle="Reservar" [options]="false">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Nome</label>
+            <input type="text" class="form-control" formControlName="inputNome" id="exampleInputPassword1"
+              placeholder="Digite seu nome">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Celular</label>
+            <input type="number" formControlName="inputCel" class="form-control" placeholder="DDD +">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>CPF</label>
+            <input type="number" formControlName="inputCpf" class="form-control" placeholder="DDD +">
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <label>Celular</label>
-          <input type="number" class="form-control" placeholder="DDD +">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Tipo de Evento</label>
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="inputEvento">
+              <option></option>
+              <option value=1>Aniversário</option>
+              <option value=2>Casamento</option>
+              <option value=1>Churrasco</option>
+              <option value=1>Chá de bebê</option>
+              <option value=1>Retiro de Igreja</option>
+              <option value=1>Familiar</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <label>CPF</label>
-          <input type="number" class="form-control" placeholder="DDD +">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Nº Convidados</label>
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="inputConv">
+              <option></option>
+              <option value=1>até 20 convidados</option>
+              <option value=1>entre 20 e 50 convidados</option>
+              <option value=1>entre 50 e 70 convidados</option>
+              <option value=1>acima de 80 convidados</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Dia do evento</label>
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="inputData">
+              <option></option>
+              <option value=1>Sexta-feira</option>
+              <option value=2>Sábado</option>
+              <option value=3>Domingo</option>
+              <option value=4>Feriado</option>
+              <option value=5>Sexta e Sábado</option>
+              <option value=6>Sábado e Domingo</option>
+              <option value=7>Sexta até Domingo</option>
+              <option value=0>Entre segunda e quinta-feira</option>
+              <option value=8>Carnaval</option>
+              <option value=9>Natal</option>
+              <option value=10>Reveillon</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Tipo de Evento</label>
-          <select class="form-control" id="exampleFormControlSelect1" formControlName="inputTypeEvent">
-            <option></option>
-            <option value=1>Aniversário</option>
-            <option value=2>Casamento</option>
-            <option value=1>Churrasco</option>
-            <option value=1>Chá de bebê</option>
-            <option value=1>Retiro de Igreja</option>
-            <option value=1>Familiar</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Nº Convidados</label>
-          <select class="form-control" id="exampleFormControlSelect1" formControlName="inputInvit">
-            <option></option>
-            <option value=1>até 20 convidados</option>
-            <option value=1>entre 20 e 50 convidados</option>
-            <option value=1>entre 50 e 70 convidados</option>
-            <option value=1>acima de 80 convidados</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <label>Data</label>
-          <input type="date" class="form-control" placeholder="DDD+ NUMERO">
-        </div>
-      </div>
+    <br>
+
+    <div style="text-align: right;">
+      <button type="button" class="btn btn-glow-dark btn-danger" (click)="clear()"
+        data-toggle="tooltip">Limpar</button>
+      <button type="button" class="btn btn-glow-dark btn-success" (click)="reservar()"
+        data-toggle="tooltip">Confirma</button>
     </div>
-  </div>
-  <br>
-  <div class="form-group">
-    <button type="button" class="btn btn-glow-dark btn-danger" title="btn btn-glow-dark btn-dark"
-      data-toggle="tooltip">Confirma</button>
-  </div>
-</app-card>
+
+
+  </app-card>
+</form>

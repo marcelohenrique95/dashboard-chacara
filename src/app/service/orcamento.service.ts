@@ -13,8 +13,8 @@ export class OrcamentoService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    public realizarOrcamento(dia: number, evento: number, conv: number): Observable<any> {
-        return this.http.post<any>(`${environment.url.orcamentoUrl}` + '/' + dia + '/' + evento + '/' + conv, this.httpOptions);
+    public realizarOrcamento(orcamento: Orcamento): Observable<any> {
+        return this.http.post<any>(`${environment.url.orcamentoUrl}`,JSON.stringify(orcamento), this.httpOptions);
     }
 
     public listaUsuarioAdm(): Observable<Orcamento> {

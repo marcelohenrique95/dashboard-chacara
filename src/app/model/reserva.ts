@@ -1,9 +1,16 @@
 export class Reserva {
-  name: string;
-  cellphone: string;
+  id: number;
+  nome: string;
+  celular: string;
   cpf: string;
-  typeEvent: number;
+  tipoEvento: number;
   convidados: number;
-  data: Date;
+  diaReserva: string;
+  mesaExtra: boolean;
+  valorPorPessoa: number;
+  valorPorEvento: number;
+  valorPorDia: number;
+  valorComMesaExtra: number;
+  valorFinal: number;
 
 }
