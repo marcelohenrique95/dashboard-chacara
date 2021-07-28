@@ -32,6 +32,7 @@ import { NavRightComponent } from './theme/layout/admin/nav-bar/nav-right/nav-ri
 import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
 import {HttpClientModule } from '@angular/common/http';
 import { ReservaService } from './service/reserva.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { ReservaService } from './service/reserva.service';
     NgbTooltipModule,
     NgbButtonsModule,
     NgbTabsetModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     NavigationItem,

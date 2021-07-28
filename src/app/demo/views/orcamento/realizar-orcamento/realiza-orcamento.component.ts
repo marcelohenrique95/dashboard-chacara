@@ -2,6 +2,7 @@ import { OrcamentoService } from './../../../../service/orcamento.service';
 import { Component, OnInit } from '@angular/core';
 import { Orcamento } from 'src/app/model/orcamento';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-realiza-orcamento',
@@ -20,17 +21,12 @@ export class RealizaOrcamentoComponent implements OnInit {
 
   result: any;
 
-
-  constructor(private fb: FormBuilder, private orcamentoService: OrcamentoService) { }
+  constructor(private fb: FormBuilder, private orcamentoService: OrcamentoService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.orcamentoForm = this.fb.group({
       inputDay: [null], inputTypeEvent: [null], inputInvit: [null]
     });
-  }
-
-  handleChange(event) {
-    event.target.checked;
   }
 
   clear() {
@@ -39,21 +35,20 @@ export class RealizaOrcamentoComponent implements OnInit {
     this.orcamentoForm.get('inputInvit').setValue('');
   }
 
-  realizarOrc() {
+  orcarValor() {
     this.orcamento = new Orcamento()
-    this.orcamento.dayEnum = this.orcamentoForm.get('inputDay').value;
-    this.orcamento.typeEvent = this.orcamentoForm.get('inputTypeEvent').value;
-    this.orcamento.qtdPerson = this.orcamentoForm.get('inputInvit').value;
-    if(this.orcamento.dayEnum == null || this.orcamento.typeEvent == null || this.orcamento.qtdPerson == null){
-      this.showError = true;
+    this.orcamento.dia = this.orcamentoForm.get('inputDay').value;
+    this.orcamento.tipoEvento = this.orcamentoForm.get('inputTypeEvent').value;
+    this.orcamento.convidados = this.orcamentoForm.get('inputInvit').value;
+    if(this.orcamento.dia == null || this.orcamento.tipoEvento == null || this.orcamento.convidados == null){
+      this.toastr.info('Por favor preencha todos os campos.', 'CAMPOS VÁZIOS');
     } else {
       this.orcamentoService.realizarOrcamento(this.orcamento).subscribe((data) => {this.result = data});
+      this.toastr.success('', 'SUCESSO');
     }
 
     console.log('resultado');
     console.log(this.result);
-
-
   }
 
   show(){

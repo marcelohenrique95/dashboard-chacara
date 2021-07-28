@@ -1,8 +1,8 @@
 export class Orcamento {
   id: number
-  dayEnum: number;
-  typeEvent: number;
-  qtdPerson: number;
-  valueFinal: number;
+  dia: number;
+  tipoEvento: number;
+  convidados: number;
+  valorFinal: number;
 
 }
