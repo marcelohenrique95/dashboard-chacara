@@ -4,5 +4,6 @@ export class Orcamento {
   tipoEvento: number;
   convidados: number;
   valorFinal: number;
+  cupom: boolean;
 
 }

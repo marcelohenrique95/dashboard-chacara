@@ -8,21 +8,15 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class OrcamentoService {
 
-    constructor(private http: HttpClient) { }
-    httpOptions = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
+  constructor(private http: HttpClient) { }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'text/plain' }),
+    'responseType': 'text'
+  };
 
-    public realizarOrcamento(orcamento: Orcamento): Observable<any> {
-        return this.http.post<any>(`${environment.url.orcamentoUrl}`,JSON.stringify(orcamento), this.httpOptions);
-    }
-
-    public listaUsuarioAdm(): Observable<Orcamento> {
-        return this.http.get<Orcamento>(`${environment.url.orcamentoUrl}` +'/listar');
-    }
-
-    public buscaUsuarioAdmPorId(id: number): Observable<Orcamento> {
-        return this.http.get<Orcamento>(`${environment.url.orcamentoUrl}` + '/' + id);
-    }
-
+  public realizarOrcamento(orcamento: Orcamento): Observable<any> {
+    return this.http.get(`${environment.url.orcamentoUrl}`
+      + '/' + orcamento.dia + '/' + orcamento.tipoEvento + '/' + orcamento.convidados + '/' + orcamento.cupom, { responseType: 'text' })
+  }
 }
+

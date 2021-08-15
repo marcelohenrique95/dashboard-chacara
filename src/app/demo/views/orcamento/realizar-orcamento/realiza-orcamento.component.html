@@ -6,7 +6,6 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Dia do evento</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputDay">
-              <option></option>
               <option value=1>Sexta-feira</option>
               <option value=2>Sábado</option>
               <option value=3>Domingo</option>
@@ -20,12 +19,18 @@
               <option value=10>Reveillon</option>
             </select>
           </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="inputSelectCupom" (change)="cupomEvt($event)">
+            <label class="form-check-label" for="exampleCheck1" >Usar cupom</label>
+          </div>
+          <div class="form-group" *ngIf="cupom == true">
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="inputTextCupom" placeholder="Digite o cupom">
+          </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
             <label for="exampleFormControlSelect1">Tipo de Evento</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputTypeEvent">
-              <option></option>
               <option value=1>Aniversário</option>
               <option value=2>Casamento</option>
               <option value=3>Churrasco</option>
@@ -39,7 +44,6 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Nº Convidados</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputInvit">
-              <option></option>
               <option value=20>até 20 convidados</option>
               <option value=49>entre 20 e 50 convidados</option>
               <option value=60>entre 50 e 70 convidados</option>
@@ -53,32 +57,39 @@
     <div class="form-group" style="text-align: right;">
       <button type="button" class="btn btn-glow-dark btn-danger" (click)="clear()"
         data-toggle="tooltip">Limpar</button>
-      <button type="button" class="btn btn-glow-dark btn-success" (click)="orcarValor()" data-toggle="tooltip">Confirmar</button>
+      <button type="button" class="btn btn-glow-dark btn-success" (click)="orcarValor(content)" data-toggle="tooltip">Confirmar</button>
     </div>
   </app-card>
-  <br>
-  <div class="col-sm-12">
-    <app-card cardTitle="Valor" [options]="false">
-      <div>
-        <h3>O valor do seu evento será R$<strong>{{result}}</strong></h3>
-      </div>
-      <hr>
-      <div>
-        <label>Deseja receber o orçamento detalhado no e-mail?</label>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="form-group">
 
-            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite o email">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <button type="button" class="btn btn-glow-dark btn-primary" data-toggle="tooltip">Enviar</button>
-          </div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Olá festeiro(a)!</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>O valor total do seu evento será de </p>
+      <h1>R$ {{result}}</h1>
+    </div>
+    <div>
+      <label>Deseja receber o orçamento detalhado no e-mail?</label>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite o email">
         </div>
       </div>
-    </app-card>
-  </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <button type="button" class="btn btn-glow-dark btn-primary" data-toggle="tooltip">Enviar</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-glow-dark btn-danger" (click)="closeDialog()">Fechar</button>
+    </div>
+  </ng-template>
+
 </form>
