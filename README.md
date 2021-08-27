@@ -19,4 +19,6 @@
 # Rodar projeto local
 
 - npm start
+- localhost:4200
+
 
