@@ -1,9 +1,22 @@
-# Info
+<h1 align="center">Aplicação web Chácara 7 Anões</h1>
 
-Aplicação em Angular 9 com API Rest
+# Status
+:warning: EM DESENVOLVIMENTO
 
-# Start
+# Programas
 
-npm install
+- VSCode
+- Nodejs
 
-npm start
+# Instalaçao
+
+- npm install -g @angular/cli
+
+# Instalar depedencias
+
+- npm install
+
+# Rodar projeto local
+
+- npm start
+
