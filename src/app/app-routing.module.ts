@@ -45,6 +45,10 @@ const routes: Routes = [
         path: 'social',
         loadChildren: () => import('./demo/views/info/social/social.module').then(m => m.SocialModule)
       },
+      {
+        path: 'prereserva',
+        loadChildren: () => import('./demo/views/orcamento/pre-reserva/pre-reserva.module').then(m => m.PreReservaModule)
+      },
     ]
   },
   {

@@ -1,3 +1,4 @@
+import { PreReservaComponent } from './demo/views/orcamento/pre-reserva/pre-reserva.component';
 import { ClienteService } from './service/cliente.service';
 import { OrcamentoService } from './service/orcamento.service';
 import { SocialComponent } from './demo/views/info/social/social.component';
@@ -58,7 +59,8 @@ import { ToastrModule } from 'ngx-toastr';
     ClientesComponent,
     FotosComponent,
     ContatoComponent,
-    SocialComponent
+    SocialComponent,
+    PreReservaComponent
   ],
   imports: [
     BrowserAnimationsModule,

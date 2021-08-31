@@ -6,17 +6,8 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Dia do evento</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputDay">
-              <option value=1>Sexta-feira</option>
-              <option value=2>Sábado</option>
-              <option value=3>Domingo</option>
-              <option value=4>Feriado</option>
-              <option value=5>Sexta e Sábado</option>
-              <option value=6>Sábado e Domingo</option>
-              <option value=7>Sexta até Domingo</option>
-              <option value=0>Entre segunda e quinta-feira</option>
-              <option value=8>Carnaval</option>
-              <option value=9>Natal</option>
-              <option value=10>Reveillon</option>
+              <option *ngFor="let day of dias"
+              [value]="day.id" >{{day.text}}</option>
             </select>
           </div>
           <div class="form-group form-check">
@@ -31,12 +22,8 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Tipo de Evento</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputTypeEvent">
-              <option value=1>Aniversário</option>
-              <option value=2>Casamento</option>
-              <option value=3>Churrasco</option>
-              <option value=4>Chá de bebê</option>
-              <option value=5>Retiro de Igreja</option>
-              <option value=6>Familiar</option>
+              <option *ngFor="let event of eventos"
+              [value]="event.id">{{event.text}}</option>
             </select>
           </div>
         </div>
@@ -44,10 +31,8 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Nº Convidados</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputInvit">
-              <option value=20>até 20 convidados</option>
-              <option value=49>entre 20 e 50 convidados</option>
-              <option value=60>entre 50 e 70 convidados</option>
-              <option value=90>acima de 80 convidados</option>
+              <option *ngFor="let invit of invites"
+              [value]="invit.id" value=20>{{invit.text}}</option>
             </select>
           </div>
         </div>

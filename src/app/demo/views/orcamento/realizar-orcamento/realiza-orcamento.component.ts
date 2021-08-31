@@ -31,6 +31,36 @@ export class RealizaOrcamentoComponent implements OnInit {
 
   result: any;
 
+  dias = [
+    {id:1 , text: 'Sexta-feira'},
+    {id:2, text: 'Sábado'},
+    {id:3, text: 'Domingo'},
+    {id:4, text: 'Feriado'},
+    {id:5, text: 'Sexta E Sábado'},
+    {id:6, text: 'Sábado E Domingo'},
+    {id:7, text: 'Sexta ATÉ Domingo'},
+    {id:0, text: 'Entre segunda e quinta-feira'},
+    {id:8, text: 'Carnaval'},
+    {id:9, text: 'Natal'},
+    {id:10, text: 'Reveillon'},
+  ];
+
+  eventos = [
+    {id:1 , text: 'Aniversário'},
+    {id:2, text: 'Casamento'},
+    {id:3, text: 'Churrasco'},
+    {id:4, text: 'Chá de bebê'},
+    {id:5, text: 'Retiro de Igreja'},
+    {id:6, text: 'Familiar'}
+  ];
+
+  invites = [
+    {id:1 , text: 'Até 10 convidados'},
+    {id:2 , text: 'Até 30 convidados'},
+    {id:3, text: 'Até 50 convidados'},
+    {id:4, text: 'Até 80 convidados'},
+  ]
+
   constructor(private config: NgbModalConfig, private modalService: NgbModal, private fb: FormBuilder, private orcamentoService: OrcamentoService, private toastr: ToastrService) {
 
     config.backdrop = 'static';
@@ -60,9 +90,12 @@ export class RealizaOrcamentoComponent implements OnInit {
   }
 
   orcarValor(content) {
+
     this.verifyCupom()
     this.orcamento = new Orcamento()
     this.orcamento.dia = this.orcamentoForm.get('inputDay').value;
+    console.log('RESULTADO')
+    console.log(this.orcamento.dia)
     this.orcamento.tipoEvento = this.orcamentoForm.get('inputTypeEvent').value;
     this.orcamento.convidados = this.orcamentoForm.get('inputInvit').value;
     this.orcamento.cupom = this.cupomConfirmado;
