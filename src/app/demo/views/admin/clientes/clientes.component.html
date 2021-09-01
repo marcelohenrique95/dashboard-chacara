@@ -13,12 +13,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr *ngFor="let client of allClient">
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{client.name}}</td>
+          <td>{{client}}</td>
+          <td>{{client.email}}</td>
+          <td>{{client.cellphone}}</td>
           <td><button type="button" class="btn btn-icon btn-rounded btn-danger"><i class="feather icon-trash"></i></button></td>
         </tr>
         </tbody>

@@ -1,5 +1,5 @@
+import { Cliente } from './../model/cliente';
 import { Observable } from 'rxjs/Observable';
-import { Orcamento } from './../model/orcamento';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -13,16 +13,16 @@ export class ClienteService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    public realizarOrcamento(usuarioAdm: Orcamento): Observable<Orcamento> {
-        return this.http.post<Orcamento>(`${environment.url.orcamentoUrl}`, JSON.stringify(usuarioAdm), this.httpOptions);
+    public registrarCliente(cliente: Cliente): Observable<Cliente> {
+        return this.http.post<Cliente>(`${environment.url.clienteUrl}`, JSON.stringify(cliente), this.httpOptions);
     }
 
-    public listaUsuarioAdm(): Observable<Orcamento> {
-        return this.http.get<Orcamento>(`${environment.url.orcamentoUrl}` +'/listar');
+    public listarCliente(): Observable<Cliente> {
+        return this.http.get<Cliente>(`${environment.url.clienteUrl}` +'/listar');
     }
 
-    public buscaUsuarioAdmPorId(id: number): Observable<Orcamento> {
-        return this.http.get<Orcamento>(`${environment.url.orcamentoUrl}` + '/' + id);
+    public buscaUsuarioAdmPorId(id: number): Observable<Cliente> {
+        return this.http.get<Cliente>(`${environment.url.orcamentoUrl}` + '/' + id);
     }
 
 }

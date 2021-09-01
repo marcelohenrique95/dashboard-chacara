@@ -90,12 +90,9 @@ export class RealizaOrcamentoComponent implements OnInit {
   }
 
   orcarValor(content) {
-
     this.verifyCupom()
-    this.orcamento = new Orcamento()
+    this.orcamento = new Orcamento();
     this.orcamento.dia = this.orcamentoForm.get('inputDay').value;
-    console.log('RESULTADO')
-    console.log(this.orcamento.dia)
     this.orcamento.tipoEvento = this.orcamentoForm.get('inputTypeEvent').value;
     this.orcamento.convidados = this.orcamentoForm.get('inputInvit').value;
     this.orcamento.cupom = this.cupomConfirmado;
@@ -111,7 +108,8 @@ export class RealizaOrcamentoComponent implements OnInit {
         (error: any) => {
           console.log(this.result);
           this.erro = error;
-          this.toastr.error('Ocorreu um erro inesperado, tente novamente.')
+          this.toastr.error('Ocorreu um erro inesperado, tente novamente.');
+          this.clear();
         });
     }
   }
