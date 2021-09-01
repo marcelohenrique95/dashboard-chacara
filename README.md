@@ -1,7 +1,12 @@
-<h1 align="center">Aplicação web Chácara 7 Anões</h1>
+<h1 align="center">Aplicação web consumindo API Rest</h1>
+
+## Angular 9 + Bootstrap
+
+# Info
+- Para usar as funcionalidades prontas, é necessario subir o backend em Java <b>https://github.com/marcelohenrique95/chacara7anoesAPI</b>
 
 # Status
-:warning: EM DESENVOLVIMENTO
+:warning: <b>EM DESENVOLVIMENTO</b>
 
 # Programas
 
@@ -12,7 +17,7 @@
 
 - npm install -g @angular/cli
 
-# Instalar depedencias
+# Instalar depedencias (node_modules)
 
 - npm install
 
@@ -20,3 +25,5 @@
 
 - npm start
 - localhost:4200
+
+
