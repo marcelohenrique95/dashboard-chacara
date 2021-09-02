@@ -22,10 +22,6 @@ const routes: Routes = [
         loadChildren: () => import('./demo/views/orcamento/realizar-orcamento/realiza-orcamento.module').then(m => m.RealizaOrcamentoModule)
       },
       {
-        path: 'reservar',
-        loadChildren: () => import('./demo/views/orcamento/reservar/reserva.module').then(m => m.ReservaModule)
-      },
-      {
         path: 'clientes',
         loadChildren: () => import('./demo/views/admin/clientes/clientes.module').then(m => m.ClientesModule)
       },
@@ -46,8 +42,12 @@ const routes: Routes = [
         loadChildren: () => import('./demo/views/info/social/social.module').then(m => m.SocialModule)
       },
       {
-        path: 'prereserva',
-        loadChildren: () => import('./demo/views/orcamento/pre-reserva/pre-reserva.module').then(m => m.PreReservaModule)
+        path: 'cadastra-cliente',
+        loadChildren: () => import('./demo/views/cadastro/cadastra-cliente/cadastra-cliente.module').then(m => m.CadastraClienteModule)
+      },
+      {
+        path: 'cadastra-reserva',
+        loadChildren: () => import('./demo/views/cadastro/cadastra-reserva/cadastra-reserva.module').then(m => m.CadastraReservaModule)
       },
     ]
   },

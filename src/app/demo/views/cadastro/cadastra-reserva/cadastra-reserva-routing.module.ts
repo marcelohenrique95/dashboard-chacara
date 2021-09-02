@@ -1,11 +1,11 @@
-import { PreReservaComponent } from './pre-reserva.component';
+import { CadastraReservaComponent } from './cadastra-reserva.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: PreReservaComponent
+    component: CadastraReservaComponent
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PreReservaRoutingModule { }
+export class CadastraReservaRoutingModule { }

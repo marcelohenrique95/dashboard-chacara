@@ -80,22 +80,6 @@ const NavigationItems = [
         classes: 'nav-item',
         icon: 'feather icon-edit'
       },
-      {
-        id: 'reserv',
-        title: 'Reservar',
-        type: 'item',
-        url: '/reservar',
-        classes: 'nav-item',
-        icon: 'feather icon-plus-square'
-      },
-      {
-        id: 'prereserv',
-        title: 'Pré Reserva',
-        type: 'item',
-        url: '/prereserva',
-        classes: 'nav-item',
-        icon: 'feather icon-plus-square'
-      }
     ]
   },
   {

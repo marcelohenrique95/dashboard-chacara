@@ -2,6 +2,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Cliente } from './../../../../model/cliente';
 import { ClienteService } from './../../../../service/cliente.service';
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-clientes',

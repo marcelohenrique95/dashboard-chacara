@@ -1,4 +1,4 @@
-import { PreReservaComponent } from './demo/views/orcamento/pre-reserva/pre-reserva.component';
+import { CadastraClienteComponent } from './demo/views/cadastro/cadastra-cliente/cadastra-cliente.component';
 import { ClienteService } from './service/cliente.service';
 import { OrcamentoService } from './service/orcamento.service';
 import { SocialComponent } from './demo/views/info/social/social.component';
@@ -7,7 +7,6 @@ import { FotosComponent } from './demo/views/fotos/fotos.component';
 import { ClientesComponent } from './demo/views/admin/clientes/clientes.component';
 import { ReservasComponent } from './demo/views/admin/reservas/reservas.component';
 import { RealizaOrcamentoComponent } from './demo/views/orcamento/realizar-orcamento/realiza-orcamento.component';
-import { ReservaComponent } from './demo/views/orcamento/reservar/reserva.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -34,6 +33,7 @@ import { ConfigurationComponent } from './theme/layout/admin/configuration/confi
 import {HttpClientModule } from '@angular/common/http';
 import { ReservaService } from './service/reserva.service';
 import { ToastrModule } from 'ngx-toastr';
+import { CadastraReservaComponent } from './demo/views/cadastro/cadastra-reserva/cadastra-reserva.component';
 
 
 @NgModule({
@@ -53,14 +53,14 @@ import { ToastrModule } from 'ngx-toastr';
     NavSearchComponent,
     NavRightComponent,
     ConfigurationComponent,
-    ReservaComponent,
     RealizaOrcamentoComponent,
     ReservasComponent,
     ClientesComponent,
     FotosComponent,
     ContatoComponent,
     SocialComponent,
-    PreReservaComponent
+    CadastraClienteComponent,
+    CadastraReservaComponent
   ],
   imports: [
     BrowserAnimationsModule,

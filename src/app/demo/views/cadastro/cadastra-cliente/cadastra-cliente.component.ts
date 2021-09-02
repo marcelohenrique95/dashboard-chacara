@@ -1,15 +1,15 @@
-import { ClienteService } from './../../../../service/cliente.service';
+import { ClienteService } from '../../../../service/cliente.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Cliente } from './../../../../model/cliente';
+import { Cliente } from '../../../../model/cliente';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pre-reserva',
-  templateUrl: './pre-reserva.component.html',
-  styleUrls: ['./pre-reserva.component.scss']
+  selector: 'app-cadastra-cliente',
+  templateUrl: './cadastra-cliente.component.html',
+  styleUrls: ['./cadastra-cliente.component.scss']
 })
-export class PreReservaComponent implements OnInit {
+export class CadastraClienteComponent implements OnInit {
 
   cliente: Cliente;
 

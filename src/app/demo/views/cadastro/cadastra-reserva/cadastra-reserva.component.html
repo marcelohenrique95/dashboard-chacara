@@ -1,0 +1,48 @@
+<form id="formRegister" [formGroup]="cadastraReservaForm">
+  <app-card cardTitle="Reservar" [options]="false">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Cliente</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome"
+              formControlName="inputCliente">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Evento</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome"
+              formControlName="inputEvento">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Celular</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome"
+              formControlName="inputCelular">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Nº Convidados</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome"
+              formControlName="inputConv">
+          </div>
+          <div class="buttonCadastra">
+            <button type="button" class="btn btn-glow-dark btn-success" (click)="verifyInput()">Cadastrar</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleInputPassword1">CPF</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome"
+              formControlName="inputCpf">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Data</label>
+            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome"
+              formControlName="inputData">
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-card>
+
+</form>

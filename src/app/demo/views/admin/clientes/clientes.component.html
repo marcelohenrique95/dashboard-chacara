@@ -1,12 +1,14 @@
 <div class="col-xl-12">
   <app-card cardTitle="Lista de clientes" [options]="false" blockClass="table-border-style">
+    <div class="buttonadd">
+      <button type="button" class="btn btn-icon btn-rounded btn-success"><i class="feather icon-plus-square" [routerLink]="['/cadastra-cliente']"></i></button>
+    </div>
     <div class="table-responsive">
       <table class="table table-hover">
         <thead>
         <tr>
           <th>#</th>
           <th>Nome</th>
-          <th>Sobrenome</th>
           <th>Email</th>
           <th>Telefone</th>
           <th></th>
@@ -16,7 +18,6 @@
         <tr *ngFor="let client of allClient">
           <td></td>
           <td>{{client.name}}</td>
-          <td>{{client}}</td>
           <td>{{client.email}}</td>
           <td>{{client.cellphone}}</td>
           <td><button type="button" class="btn btn-icon btn-rounded btn-danger"><i class="feather icon-trash"></i></button></td>

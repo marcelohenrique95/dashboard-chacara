@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PreReservaComponent } from './pre-reserva.component';
+import { CadastraReservaComponent } from './cadastra-reserva.component';
 
-describe('PreReservaComponent', () => {
-  let component: PreReservaComponent;
-  let fixture: ComponentFixture<PreReservaComponent>;
+describe('CadastraReservaComponent', () => {
+  let component: CadastraReservaComponent;
+  let fixture: ComponentFixture<CadastraReservaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PreReservaComponent ]
+      declarations: [ CadastraReservaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PreReservaComponent);
+    fixture = TestBed.createComponent(CadastraReservaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
