@@ -6,24 +6,27 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Dia do evento</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputDay">
-              <option *ngFor="let day of dias"
-              [value]="day.id" >{{day.text}}</option>
+              <option *ngFor="let day of dias" [value]="day.id">{{day.text}}</option>
             </select>
           </div>
           <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="inputSelectCupom" (change)="cupomEvt($event)">
-            <label class="form-check-label" for="exampleCheck1" >Usar cupom</label>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="inputSelectCupom"
+              (change)="cupomEvt($event)">
+            <label class="form-check-label" for="exampleCheck1">Usar cupom</label>
           </div>
           <div class="form-group" *ngIf="cupom == true">
-            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="inputTextCupom" placeholder="Digite o cupom">
+            <input type="text" class="form-control" id="exampleInputPassword1"
+              (input)="verifyCupom($event.target.value)" formControlName="inputTextCupom" placeholder="Digite o cupom">
+          </div>
+          <div class="msgCupom" *ngIf="cupom == true && cupomConfirmado">
+            <span class="feather icon-check-circle"><strong> CUPOM APLICADO</strong></span>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
             <label for="exampleFormControlSelect1">Tipo de Evento</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputTypeEvent">
-              <option *ngFor="let event of eventos"
-              [value]="event.id">{{event.text}}</option>
+              <option *ngFor="let event of eventos" [value]="event.id">{{event.text}}</option>
             </select>
           </div>
         </div>
@@ -31,8 +34,7 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Nº Convidados</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="inputInvit">
-              <option *ngFor="let invit of invites"
-              [value]="invit.id" value=20>{{invit.text}}</option>
+              <option *ngFor="let invit of invites" [value]="invit.id" value=20>{{invit.text}}</option>
             </select>
           </div>
         </div>
@@ -40,10 +42,11 @@
     </div>
     <br>
     <div class="form-group" style="text-align: right;">
-      <button type="button" class="btn btn-glow-dark btn-danger" (click)="clear()"
-        data-toggle="tooltip">Limpar</button>
-      <button type="button" class="btn btn-glow-dark btn-success" (click)="orcarValor(content)" data-toggle="tooltip">Confirmar</button>
+      <button type="button" class="btn btn-glow-dark btn-danger" (click)="clear()" data-toggle="tooltip">Limpar</button>
+      <button type="button" class="btn btn-glow-dark btn-success" (click)="orcarValor(content)"
+        data-toggle="tooltip">Confirmar</button>
     </div>
+
   </app-card>
 
   <ng-template #content let-c="close" let-d="dismiss">

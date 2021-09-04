@@ -78,19 +78,23 @@ export class RealizaOrcamentoComponent implements OnInit {
     this.orcamentoForm.get('inputTypeEvent').setValue('');
     this.orcamentoForm.get('inputInvit').setValue('');
     this.orcamentoForm.get('inputTextCupom').setValue('');
+    this.orcamentoForm.get('inputSelectCupom').reset();
     this.sendEmail = false;
+    this.cupom = false;
+    this.cupomConfirmado = false;
+    this.orcamentoForm.get('inputTextCupom').enable();
   }
 
   cupomEvt(evt: any) {
     this.cupom = evt.target.checked;
     if (evt.target.checked == false) {
       this.orcamentoForm.get('inputTextCupom').setValue('');
+      this.cupomConfirmado = false;
+      this.orcamentoForm.get('inputTextCupom').enable();
     }
-    console.log(this.cupom);
   }
 
   orcarValor(content) {
-    this.verifyCupom()
     this.orcamento = new Orcamento();
     this.orcamento.dia = this.orcamentoForm.get('inputDay').value;
     this.orcamento.tipoEvento = this.orcamentoForm.get('inputTypeEvent').value;
@@ -120,10 +124,12 @@ export class RealizaOrcamentoComponent implements OnInit {
     this.clear();
   }
 
-  verifyCupom() {
+  verifyCupom(evt: string) {
     let cupomOn = 'CHACARA2021';
-    if (cupomOn == this.orcamentoForm.get('inputTextCupom').value) {
+    console.log(evt);
+    if (cupomOn == evt.toUpperCase()) {
       this.cupomConfirmado = true;
+      this.orcamentoForm.get('inputTextCupom').disable();
     } else {
       this.cupomConfirmado = false;
     }
