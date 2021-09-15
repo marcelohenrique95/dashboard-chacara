@@ -68,7 +68,7 @@ const NavigationItems = [
   },
   {
     id: 'orcamento',
-    title: 'Orçamento',
+    title: 'Cliente',
     type: 'group',
     icon: 'icon-group',
     children: [
@@ -77,6 +77,14 @@ const NavigationItems = [
         title: 'Realizar Orçamento',
         type: 'item',
         url: '/realiza-orcamento',
+        classes: 'nav-item',
+        icon: 'feather icon-feather'
+      },
+      {
+        id: 'reservar-data',
+        title: 'Reservar/Agendar Visita',
+        type: 'item',
+        url: '/reservar-data',
         classes: 'nav-item',
         icon: 'feather icon-edit'
       },

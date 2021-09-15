@@ -1,3 +1,4 @@
+import { ReservarDataComponent } from './demo/views/orcamento/reservar-data/reservar-data.component';
 import { CadastraClienteComponent } from './demo/views/cadastro/cadastra-cliente/cadastra-cliente.component';
 import { ClienteService } from './service/cliente.service';
 import { OrcamentoService } from './service/orcamento.service';
@@ -34,6 +35,7 @@ import {HttpClientModule } from '@angular/common/http';
 import { ReservaService } from './service/reserva.service';
 import { ToastrModule } from 'ngx-toastr';
 import { CadastraReservaComponent } from './demo/views/cadastro/cadastra-reserva/cadastra-reserva.component';
+import { PageErrorComponent } from './demo/views/page-error/page-error.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { CadastraReservaComponent } from './demo/views/cadastro/cadastra-reserva
     ContatoComponent,
     SocialComponent,
     CadastraClienteComponent,
-    CadastraReservaComponent
+    CadastraReservaComponent,
+    ReservarDataComponent,
+    PageErrorComponent
   ],
   imports: [
     BrowserAnimationsModule,

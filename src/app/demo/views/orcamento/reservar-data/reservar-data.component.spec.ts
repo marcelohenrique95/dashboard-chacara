@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SolicitaOrcamentoComponent } from './solicita-orcamento.component';
+import { ReservarDataComponent } from './reservar-data.component';
 
-describe('SolicitaOrcamentoComponent', () => {
-  let component: SolicitaOrcamentoComponent;
-  let fixture: ComponentFixture<SolicitaOrcamentoComponent>;
+describe('ReservarDataComponent', () => {
+  let component: ReservarDataComponent;
+  let fixture: ComponentFixture<ReservarDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SolicitaOrcamentoComponent ]
+      declarations: [ ReservarDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SolicitaOrcamentoComponent);
+    fixture = TestBed.createComponent(ReservarDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

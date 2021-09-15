@@ -1,3 +1,4 @@
+import { PageErrorComponent } from './demo/views/page-error/page-error.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'realiza-orcamento',
         loadChildren: () => import('./demo/views/orcamento/realizar-orcamento/realiza-orcamento.module').then(m => m.RealizaOrcamentoModule)
+      },
+      {
+        path: 'reservar-data',
+        loadChildren: () => import('./demo/views/orcamento/reservar-data/reservar-data.module').then(m => m.ReservarDataModule)
       },
       {
         path: 'clientes',
@@ -60,6 +65,10 @@ const routes: Routes = [
         loadChildren: () => import('./demo/pages/authentication/authentication.module').then(m => m.AuthenticationModule)
       }
     ]
+  },
+  {
+    path: '**',
+    component: PageErrorComponent
   }
 ];
 
