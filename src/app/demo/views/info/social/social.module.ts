@@ -2,6 +2,7 @@ import { SocialRoutingModule } from './social-routing.module';
 import { SharedModule } from './../../../../theme/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbAccordionModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -10,7 +11,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     SharedModule,
-    SocialRoutingModule
+    SocialRoutingModule,
+    NgbCollapseModule,
+    NgbAccordionModule
   ]
 })
 export class SocialModule { }

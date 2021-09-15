@@ -1,21 +1,80 @@
-<div class="col-sm-12">
-  <app-card [options]="false">
-    <h1>Localização</h1>
-    <p class="text-muted mb-4">Suspendisse vel quam malesuada, aliquet sem sit amet, fringilla elit. Morbi tempor tincidunt tempor. Etiam id turpis viverra, vulputate sapien nec, varius sem. Curabitur ullamcorper fringilla eleifend. In ut eros hendrerit est consequat posuere et at velit.</p>
-    <div class="clearfix"></div>
-    <h2>Itens inclusos na locação</h2>
-    <p class="text-muted mb-4">In nec rhoncus eros. Vestibulum eu mattis nisl. Quisque viverra viverra magna nec pulvinar. Maecenas pellentesque porta augue, consectetur facilisis diam porttitor sed. Suspendisse tempor est sodales augue rutrum tincidunt. Quisque a malesuada purus.</p>
-    <div class="clearfix"></div>
-    <h3>Proibições</h3>
-    <p class="text-muted mb-4">Vestibulum auctor tincidunt semper. Phasellus ut vulputate lacus. Suspendisse ultricies mi eros, sit amet tempor nulla varius sed. Proin nisl nisi, feugiat quis bibendum vitae, dapibus in tellus.</p>
-    <div class="clearfix"></div>
-    <h4>Redes sociais</h4>
-    <p class="text-muted mb-4">Nulla et mattis nunc. Curabitur scelerisque commodo condimentum. Mauris blandit, velit a consectetur egestas, diam arcu fermentum justo, eget ultrices arcu eros vel erat.</p>
-    <div class="clearfix"></div>
-    <h5>This is a Heading 5</h5>
-    <p class="text-muted mb-4">Quisque nec turpis at urna dictum luctus. Suspendisse convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac, commodo dapibus odio. Vivamus pretium nec odio cursus elementum. Suspendisse molestie ullamcorper ornare.</p>
-    <div class="clearfix"></div>
-    <h6>This is a Heading 6</h6>
-    <p class="text-muted mb-0">Donec ultricies, lacus id tempor condimentum, orci leo faucibus sem, a molestie libero lectus ac justo. ultricies mi eros, sit amet tempor nulla varius sed. Proin nisl nisi, feugiat quis bibendum vitae, dapibus in tellus.</p>
-  </app-card>
-</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-md-6">
+        <ngb-accordion [closeOthers]="true" class="datta-accordion">
+          <ngb-panel id="static-1">
+            <ng-template ngbPanelTitle>
+              <a href="javascript:">Localização</a>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <h3>Cuiabá - MT</h3>
+              <h4>Jardim Universitário</h4>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-4">
+            <ng-template ngbPanelTitle>
+              <a href="javascript:">Inclusos na locação</a>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <h3>Inclusos sem custo adicional</h3>
+              <p>Churrasqueira</p>
+              <p>Freezer</p>
+              <p>Piscina infantil/adulta</p>
+              <p>Cozinha</p>
+              <p>Geladeira e fogão industrial</p>
+              <p>Banheiros</p>
+              <p>Estacionamento interno</p>
+              <p>10 jogos de mesas/cadeiras</p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-5">
+            <ng-template ngbPanelTitle>
+              <a href="javascript:">Itens adicionais*</a>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <h3>Itens com custo extra</h3>
+              <p>Gás de cozinha</p>
+              <p>Quartos para dormir</p>
+              <p>+ jogos de mesas/cadeiras</p>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+      <div class="col-md-6">
+        <ngb-accordion [closeOthers]="true" activeIds="static-1" class="datta-accordion">
+          <ngb-panel id="static-3">
+            <ng-template ngbPanelTitle>
+              <a href="javascript:">Regras</a>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <h3>Medidas para segurança e bem estar de ambas as partes</h3>
+              <p>Não exceder o limite de convidados declarado em contrato</p>
+              <p>Diminuir o volume do som após as 23h de acordo com as leis municipais</p>
+              <p>Não permitir a proximidade de crianças no canil</p>
+              <p>Não usar cola quente na parede</p>
+              <p>Evitar entrar na piscina com bebidas ou alimentos</p>
+              <p>Tomar ducha antes de entrar na piscina</p>
+              <p>Não mecher no padrão de energia, exceto se houver alguma queda de energia</p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-2">
+            <ng-template ngbPanelTitle>
+              <a href="javascript:">Proibições</a>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <h3>É proibido</h3>
+              <p>Eventos do tipo rave/funk</p>
+              <p>Eventos sem maior de idade responsável</p>
+              <p>Uso de bebidas alcoólicas por menores de idade</p>
+              <h3>Passível de cancelamento</h3>
+              <p>Denúncia por uso de entorpecentes</p>
+              <p>Quantidade de pessoas acima do declarado em contrato</p>
+              <p>Brigas generalizadas</p>
+              <p>Porte de arma de fogo</p>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </div>
+  </div>

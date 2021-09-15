@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialComponent implements OnInit {
 
+  public isCollapsed: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.isCollapsed = true;
   }
 
 }
